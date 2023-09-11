@@ -62,3 +62,103 @@ export const navElements = [
     route: "/help",
   },
 ];
+
+
+export const product = [
+  {
+    id: 1,
+    title: "LandingPage",
+
+  },
+  {
+    id: 2,
+    title: "Features",
+
+  },
+  {
+    id: 3,
+    title: "Documentation",
+
+  },
+  {
+    id: 4,
+    title: "Referral Program",
+
+  },
+  {
+    id: 5,
+    title: "Pricing",
+
+  },
+
+]
+
+export const services = [
+  {
+    id: 1,
+    title: "Documentation",
+
+  },
+  {
+    id: 2,
+    title: "Design",
+
+  },
+  {
+    id: 3,
+    title: "Themes",
+
+  },
+  {
+    id: 4,
+    title: "Illustrations",
+
+  },
+  {
+    id: 5,
+    title: "UI Kit",
+
+  },
+
+]
+
+export const company = [
+  {
+    id: 1,
+    title: "About",
+
+  },
+  {
+    id: 2,
+    title: "Terms",
+
+  },
+  {
+    id: 3,
+    title: "Privacy Policy",
+
+  },
+  {
+    id: 4,
+    title: "Careers",
+
+  },
+]
+
+export const more = [
+  {
+    id: 1,
+    title: "Documentation",
+
+  },
+  {
+    id: 2,
+    title: "License",
+
+  },
+  {
+    id: 3,
+    title: "Changelog",
+
+  },
+]

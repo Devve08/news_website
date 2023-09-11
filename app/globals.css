@@ -7,3 +7,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
+.curve::before {
+  content: "";
+  border-radius: 50%;
+  transform-origin: bottom;
+  /* transform: translateY(-80%) scale(4); */
+}
