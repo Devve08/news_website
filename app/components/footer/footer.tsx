@@ -1,10 +1,15 @@
 "use client";
 
+import FooterCurve from "./footerCurve";
+import FooterDetailsSection from "./footerDetailsSection";
+
+
 const Footer = () => {
   return (
-    <div className=' bg-primary min-h-screen  w-full overflow-hidden relative'>
-      <div className='curve'></div>
-    </div>
+  <div className="w-full h-full relative">
+    <FooterCurve />
+    <FooterDetailsSection />
+  </div>
   );
 };
 
