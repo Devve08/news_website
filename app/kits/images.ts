@@ -4,4 +4,6 @@ export const images = {
   logoWhite: require("../assets/images/logo_white.png"),
   heart: require("../assets/images/heart.png"),
   angleDown: require("../assets/images/angle_down.png"),
+  verified: require("../assets/images/verified.png"),
+  semiCircle: require("../assets/images/semi_circle.png"),
 };
