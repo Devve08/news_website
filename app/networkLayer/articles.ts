@@ -7,7 +7,7 @@ import { preparePagination } from "./common/networkHelpers";
  */
 export function getTopArticles(data: any) {
   return networkCallGet(
-    preparePagination("top-headlines?category=general", data.page, data.limit),
+    preparePagination("top-headlines?country=us", data.page, data.limit),
     null
   );
 }

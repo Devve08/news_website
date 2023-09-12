@@ -2,26 +2,16 @@ import { useAppDispatch } from "@/app/kits/hooks";
 import { images } from "@/app/kits/images";
 import { getSearchedArticles, getTopArticles } from "@/app/redux/reducerLayer/articlesReducer";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { memo } from "react";
 
-const Hero = () => {
-  const [query, setQuery] = useState<string>("");
-  const dispatch = useAppDispatch();
+type HeroProps = {
+  query: string,
+  handleOnChangeQuery: any,
+  handleSearch: any,
+}
 
-  const handleSearch = () => {
-    const data = {
-      query,
-      page: 1,
-      limit: 10,
-    };
-    dispatch(getSearchedArticles(data))
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  };
+const Hero = ({query, handleOnChangeQuery, handleSearch}: HeroProps) => {
 
-  const handleOnChangeQuery = (query: string) => {
-    setQuery(query);
-  };
   return (
     <div className="bg-background flex flex-row w-full  m-auto h-[80vh] items-center">
       <div className="w-full md:w-1/2 py-8 sm:py-16   ">
@@ -40,6 +30,7 @@ const Hero = () => {
               width={0}
               height={0}
               alt={""}
+          
             />
             <input
               value={query}
@@ -86,4 +77,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

@@ -7,10 +7,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import NavElements from "./navElements";
 import NavPhone from "./navPhone";
 import { useAppSelector } from "@/app/kits/hooks";
+import {memo} from 'react'
 
 const Navbar = () => {
   const open = useAppSelector((state) => state.menu.open);
-
   return (
     <motion.div
       initial={{ y: -20, opacity: 0 }}
@@ -28,4 +28,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

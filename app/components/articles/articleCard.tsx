@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { images } from "../../kits/images";
 import { formatDate } from "@/app/kits/helper";
+import {memo} from 'react'
+import {motion} from 'framer-motion'
 
 type ArticleCardProps = {
   title: string | "";
@@ -21,8 +23,9 @@ const ArticleCard = ({
   author,
   content,
 }: ArticleCardProps) => {
+  console.log('render card')
   return (
-    <div className="w-full h-80 rounded flex items-center justify-center ">
+    <motion.div className="w-full h-80 rounded flex items-center justify-center cursor-pointer ">
       <div className="bg-white h-full rounded w-[80%] sm:w-[90%] shadow-lg">
         <div className="h-1/2 relative rounded-t">
            <Image blurDataURL={images.article} unoptimized src={url? url : images.article} className="h-full w-full" width={0} height={0} alt={""} />
@@ -51,8 +54,8 @@ const ArticleCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default ArticleCard;
+export default memo(ArticleCard);

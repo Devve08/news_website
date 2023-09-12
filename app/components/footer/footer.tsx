@@ -2,9 +2,11 @@
 
 import FooterCurve from "./footerCurve";
 import FooterDetailsSection from "./footerDetailsSection";
+import {memo} from 'react'
 
 
 const Footer = () => {
+  console.log('rendering footer')
   return (
   <div className="w-full h-full relative">
     <FooterCurve />
@@ -13,4 +15,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);
