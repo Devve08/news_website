@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { images } from "../kits/images";
+import { images } from "../../kits/images";
 
 const ArticleCard = () => {
   return (
