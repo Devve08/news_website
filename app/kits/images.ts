@@ -8,4 +8,5 @@ export const images = {
   semiCircle: require("../assets/images/semi_circle.png"),
   search: require("../assets/images/search.png"),
   article: require("../assets/images/article.jpg"),
+  arrow: require("../assets/images/arrow.png"),
 };
