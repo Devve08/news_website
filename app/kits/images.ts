@@ -6,4 +6,5 @@ export const images = {
   angleDown: require("../assets/images/angle_down.png"),
   verified: require("../assets/images/verified.png"),
   semiCircle: require("../assets/images/semi_circle.png"),
+  search: require("../assets/images/search.png"),
 };
