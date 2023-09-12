@@ -6,8 +6,9 @@ import Hero from "./components/hero/hero";
 import Navbar from "./components/navbar/navbar";
 
 export default function Home() {
+  console.log('render hom')
   return (
-    <main className="h-screen bg-background ">
+    <main className="h-screen bg-background px-4 sm:px-10 md:px-20">
       <Navbar />
       <Hero />
       <Articles />

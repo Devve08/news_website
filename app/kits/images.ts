@@ -7,4 +7,5 @@ export const images = {
   verified: require("../assets/images/verified.png"),
   semiCircle: require("../assets/images/semi_circle.png"),
   search: require("../assets/images/search.png"),
+  article: require("../assets/images/article.jpg"),
 };
