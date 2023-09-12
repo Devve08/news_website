@@ -15,7 +15,10 @@ const NavElement = ({ title, dropdown }: NavElementProps) => {
         {title}
       </div>
       {dropdown.length > 0 && (
-        <Image src={images.angleDown} height={10} width={10} alt={""} />
+        <div className="h-[8px] w-[10px]">
+           <Image  src={images.angleDown} height={0} width={0} className="h-full w-full" alt={""} />
+        </div>
+       
       )}
     </div>
   );

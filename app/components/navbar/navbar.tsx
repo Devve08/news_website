@@ -16,10 +16,10 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, type: "spring", stiffness: 30 }}
-      className=' py-8 px-2 flex flex-row items-center justify-between'
+      className=' py-8  flex flex-row items-center justify-between'
     >
       <div className=' w-24 h-8 relative z-50'>
-        <Image src={images.logo} alt={""} fill />
+        <Image  src={images.logo} width={0} height={0} alt={""} className="h-auto w-full" />
       </div>
       <NavElements />
       <BurgerMenu />

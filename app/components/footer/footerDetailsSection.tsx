@@ -48,7 +48,7 @@ const FooterDetailsSection = () => {
       <div className="bg-primary flex-wrap flex px-4 sm:px-10 md:px-16 flex-col-reverse sm:flex-row w-full items-center sm:items-start justify-start">
         <div className="flex flex-col items-center sm:items-start gap-y-4 p-4 w-full sm:w-1/3 md:w-1/5">
           <div className=" w-20 h-6 relative z-50">
-            <Image src={images.logoWhite} alt={""} fill />
+            <Image  src={images.logoWhite} alt={""} height={0} width={0} className="h-full w0-full" />
           </div>
           <div className="text-secondary text-sm text-center sm:text-start">
             Build a modern and creative website with crealand
