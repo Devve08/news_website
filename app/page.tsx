@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   return (
-    <main className="mn-h-screen bg-background px-4 sm:px-10 md:px-20">
+    <main className="mn-h-screen bg-background ">
       <Hero
         handleSearch={handleSearch}
         query={query}
