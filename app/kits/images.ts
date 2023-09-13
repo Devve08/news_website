@@ -1,5 +1,5 @@
 export const images = {
-  logo: require("../assets/images/Logo.png"),
+  logo: require("../assets/images/logo.png"),
   hero: require("../assets/images/hero.png"),
   logoWhite: require("../assets/images/logo_white.png"),
   heart: require("../assets/images/heart.png"),
