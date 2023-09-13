@@ -12,14 +12,14 @@ const Home = () => {
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const dispatch = useAppDispatch();
-  console.log(page,'page')
+  console.log(page, "page");
   const handleOnChangeQuery = useCallback((query: string) => {
     setQuery(query);
   }, []);
 
-  const handleSetPage = (num:number) => {
-    setPage(prev => num == 0 ? 2 : prev + 1)
-  }
+  const handleSetPage = (num: number) => {
+    setPage(prev => (num == 0 ? 2 : prev + 1));
+  };
   const handleSearch = () => {
     const data = {
       query,
@@ -29,18 +29,16 @@ const Home = () => {
     dispatch(getSearchedArticles(data))
       .then(res => setPage(2))
       .catch(err => console.log(err));
-  }
+  };
 
   return (
-    <main className="h-screen bg-background px-4 sm:px-10 md:px-20">
-      <Navbar />
+    <main className="mn-h-screen bg-background px-4 sm:px-10 md:px-20">
       <Hero
         handleSearch={handleSearch}
         query={query}
         handleOnChangeQuery={handleOnChangeQuery}
       />
       <Articles page={page} setPage={handleSetPage} query={query} />
-      <Footer />
     </main>
   );
 };
