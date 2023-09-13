@@ -16,7 +16,6 @@ export function getTopArticlesAction(data:any) {
         return Promise.resolve(data);
       })
       .catch(error => {
-        console.log('redux error')
         return Promise.reject(prepareErrorResponse(error));
       });
   }

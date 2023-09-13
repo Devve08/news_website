@@ -14,7 +14,7 @@ type NavElementProps = {
 
 const NavElement = ({ title, dropdown, link }: NavElementProps) => {
   const [dropdownOpen, setDropdown] = useState<boolean>();
-  console.log("render element");
+  ("render element");
   const handleDropdown = () => {
     setDropdown(!dropdownOpen);
   };

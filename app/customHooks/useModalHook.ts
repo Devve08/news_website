@@ -6,7 +6,6 @@ const UseModalHook = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false)
 
     const handleModalStatus = () => {
-        console.log('helllo')
         setModalOpen(!modalOpen)
     }
 

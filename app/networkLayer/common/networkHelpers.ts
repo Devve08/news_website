@@ -1,5 +1,4 @@
 export const preparePagination = (url: string, page: number, limit: number) => {
-  console.log('page', page)
     var finalUrl = url;
     var pageFinal = page ?? 1;
     var limitFinal = limit ?? 1000;

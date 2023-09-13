@@ -46,10 +46,10 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
     } else {
       dispatch(getMoreTopArticles(data))
         .then(res => setPage(2))
-        .catch(err => console.log(err));
+        .catch(err => (err));
     }
   };
-  console.log('errorMessage', errorMessage)
+
   useEffect(() => {
     fetchTopArticles();
   }, []);

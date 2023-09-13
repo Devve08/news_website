@@ -12,7 +12,6 @@ const Home = () => {
   const [query, setQuery] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const dispatch = useAppDispatch();
-  console.log(page, "page");
   const handleOnChangeQuery = useCallback((query: string) => {
     setQuery(query);
   }, []);
