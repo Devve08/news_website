@@ -1,8 +1,9 @@
-import { useAppDispatch } from "@/app/kits/hooks";
+'use client'
 import { images } from "@/app/kits/images";
-import { getSearchedArticles, getTopArticles } from "@/app/redux/reducerLayer/articlesReducer";
+
 import Image from "next/image";
 import React, { memo } from "react";
+import {motion, spring} from 'framer-motion'
 
 type HeroProps = {
   query: string,
@@ -13,7 +14,7 @@ type HeroProps = {
 const Hero = ({query, handleOnChangeQuery, handleSearch}: HeroProps) => {
 
   return (
-    <div className="bg-background flex flex-row w-full  m-auto h-[80vh] items-center">
+    <motion.div initial={{opacity: 0, y:200}} animate={{opacity: 1, y:0}} transition={{delay:0.2, duration: 0.5, type: 'spring', stiffness: 30}} className="bg-background flex flex-row w-full  m-auto h-[80vh] items-center">
       <div className="w-full md:w-1/2 py-8 sm:py-16   ">
         <div className="text-text_primary font-bold text-2xl sm:text-3xl md:text-4xl leading-snug text-center md:text-start">
           Manage all of your cards in one place
@@ -73,7 +74,7 @@ const Hero = ({query, handleOnChangeQuery, handleSearch}: HeroProps) => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

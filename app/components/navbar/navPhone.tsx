@@ -29,6 +29,7 @@ const NavPhone = () => {
       <div className='flex flex-col gap-6 h-full items-center justify-center'>
         {navElements.map((el, index) => (
           <motion.div
+          key={el.id}
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{
