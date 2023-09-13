@@ -22,7 +22,7 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
   );
 
   const dispatch = useAppDispatch();
-  console.log("articles rendering");
+
   const fetchTopArticles = () => {
     const data = {
       page: 1,

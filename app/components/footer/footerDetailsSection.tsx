@@ -29,17 +29,17 @@ const FooterDetailsSection = () => {
           </div>
         </div>
         <div className="relative w-full sm:flex flex-col justify-end md:justify-center items-center md:w-1/2 h-0 sm:h-full hidden ">
-          <div className="bg-white flex flex-col gap-4 w-2/3 md:h-2/5  sm:h-2/4 rounded-md z-50 p-2 ">
+          <div className="bg-white flex flex-col gap-4 w-2/3 md:h-2/5  sm:h-2/4 rounded-md z-30 p-2 ">
             <div className="bg-[#FC5A5A] w-full rounded-md h-1/2"></div>
             <div className="text-primary font-semibold text-base">The best aticles every week</div>
             <div className="text-primary font-normal text-xs">Our insurance plans offers are priced the same everywhere else.</div>
           </div>
           <div className="w-2/3 md:h-2/5 sm:h-2/4 rounded-md absolute ">
             <div className="w-full">
-              <div className="w-1/3 md:1/2 bg-text_secondary aspect-square rounded-md absolute -right-[15%] top-[10%]"></div>
+              <div className="w-1/3 md:1/2 z-10 bg-text_secondary aspect-square rounded-md absolute -right-[15%] top-[10%]"></div>
             </div>
             <div className="w-full">
-              <div className="bg-white md:1/2 opacity-10 w-1/3 aspect-square rounded-md absolute -left-[15%] -bottom-[10%]"></div>
+              <div className="bg-white md:1/2 opacity-10 w-1/3 z-10 aspect-square rounded-md absolute -left-[15%] -bottom-[10%]"></div>
             </div>
           </div>
         </div>
