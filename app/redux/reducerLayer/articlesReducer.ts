@@ -71,7 +71,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getTopArticles.rejected, (state, { payload }: any) => {
-      (state.isLoadingMore = false), (state.errorMessage = payload);
+      (state.isLoadingMore = false), (state.errorMessage = payload.message);
     });
     builder.addCase(getMoreTopArticles.pending, state => {
       state.isLoadingMore = true;
@@ -82,7 +82,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getMoreTopArticles.rejected, (state, { payload }: any) => {
-      (state.isLoading = false), (state.errorMessage = payload);
+      (state.isLoading = false), (state.errorMessage = payload.message);
     });
     builder.addCase(getMoreSearchedArticles.pending, state => {
       state.isLoadingMore = true;
@@ -93,7 +93,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getMoreSearchedArticles.rejected, (state, { payload }: any) => {
-      (state.isLoading = false), (state.errorMessage = payload);
+      (state.isLoading = false), (state.errorMessage = payload.message);
     });
     builder.addCase(getSearchedArticles.pending, state => {
       state.isLoading = true;
@@ -104,7 +104,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getSearchedArticles.rejected, (state, { payload }: any) => {
-      (state.isLoading = false), (state.errorMessage = payload);
+      (state.isLoading = false), (state.errorMessage = payload.message);
     });
   },
 });

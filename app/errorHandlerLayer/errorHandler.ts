@@ -9,6 +9,6 @@ export default function prepareErrorResponse(error: any) {
   let message = error.response?.data?.message || error.response?.data?.error || error.message || "";
   return new ErrorResponseModel({
     message: message,
-    // statusCode: errorStatus,
+    statusCode: error.status,
   });
 }

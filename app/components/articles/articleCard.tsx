@@ -26,7 +26,7 @@ const ArticleCard = ({
   content,
 }: ArticleCardProps) => {
   const { handleModalStatus, modalOpen } = UseModalHook();
-  console.log("render card", title);
+  
   return (
     <motion.div className="w-full h-80 rounded flex items-center justify-center cursor-pointer ">
       <motion.div

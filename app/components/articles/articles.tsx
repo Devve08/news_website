@@ -17,7 +17,7 @@ type ArticlesProps = {
 };
 
 const Articles = ({ query, setPage, page }: ArticlesProps) => {
-  const { articles, isLoading, isLoadingMore } = useAppSelector(
+  const { articles, isLoading, isLoadingMore, errorMessage } = useAppSelector(
     state => state.articles
   );
 
@@ -49,7 +49,7 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
         .catch(err => console.log(err));
     }
   };
-
+  console.log('errorMessage', errorMessage)
   useEffect(() => {
     fetchTopArticles();
   }, []);
