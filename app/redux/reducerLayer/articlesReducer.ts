@@ -65,13 +65,15 @@ const articlesReducer = createSlice({
     builder.addCase(getTopArticles.pending, state => {
       state.isLoading = true;
     });
-    builder.addCase(getTopArticles.fulfilled, (state, { payload }: any) => {
+    builder.addCase(getTopArticles.fulfilled, (state, { payload , error }: any) => {
+      (console.log(payload, error)),
       (state.articles = payload.articles),
         (state.isLoading = false),
         (state.errorMessage = "");
     });
-    builder.addCase(getTopArticles.rejected, (state, error:any) => {
-      (state.isLoadingMore = false), (state.errorMessage = error.message);
+    builder.addCase(getTopArticles.rejected, (state, {error}:any) => {
+      (console.log(error)),
+      (state.isLoadingMore = false), (state.errorMessage = "");
     });
     builder.addCase(getMoreTopArticles.pending, state => {
       state.isLoadingMore = true;
@@ -82,7 +84,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getMoreTopArticles.rejected, (state, error:any) => {
-      (state.isLoading = false), (state.errorMessage = error.message);
+      (state.isLoading = false), (state.errorMessage = "");
     });
     builder.addCase(getMoreSearchedArticles.pending, state => {
       state.isLoadingMore = true;
@@ -93,7 +95,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getMoreSearchedArticles.rejected, (state,error: any) => {
-      (state.isLoading = false), (state.errorMessage = error.message);
+      (state.isLoading = false), (state.errorMessage = "");
     });
     builder.addCase(getSearchedArticles.pending, state => {
       state.isLoading = true;
@@ -104,7 +106,7 @@ const articlesReducer = createSlice({
         (state.errorMessage = "");
     });
     builder.addCase(getSearchedArticles.rejected, (state, error: any) => {
-      (state.isLoading = false), (state.errorMessage = error.message);
+      (state.isLoading = false), (state.errorMessage = "");
     });
   },
 });
