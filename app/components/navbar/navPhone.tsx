@@ -39,7 +39,7 @@ const NavPhone = () => {
               stiffness: 30,
             }}
           >
-            <NavElement key={el.id} title={el.title} dropdown={el.dropdown} />
+            <NavElement key={el.id} title={el.title} dropdown={el.dropdown} link={el.route} />
           </motion.div>
         ))}
         <div className=' border-text_secondary border text-text_secondary py-2 px-4 rounded-3xl text-sm font-medium cursor-pointer transition-colors duration-300 hover:bg-text_secondary hover:text-white'>
