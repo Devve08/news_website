@@ -1,5 +1,8 @@
 "use client";
-import { getSearchedArticlesAction, getTopArticlesAction } from "@/app/actionHandlerLayer/articles";
+import {
+  getSearchedArticlesAction,
+  getTopArticlesAction,
+} from "@/app/actionHandlerLayer/articles";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 interface article {
@@ -15,14 +18,14 @@ interface State {
   articles: article[];
   isLoading: boolean;
   errorMessage: string;
-  isLoadingMore: boolean
+  isLoadingMore: boolean;
 }
 
 const initialState: State = {
   articles: [],
   isLoading: false,
   errorMessage: "",
-  isLoadingMore: false
+  isLoadingMore: false,
 };
 
 export const getTopArticles = createAsyncThunk(
@@ -65,15 +68,18 @@ const articlesReducer = createSlice({
     builder.addCase(getTopArticles.pending, state => {
       state.isLoading = true;
     });
-    builder.addCase(getTopArticles.fulfilled, (state, { payload , error }: any) => {
-      (console.log(payload, error)),
-      (state.articles = payload.articles),
+    builder.addCase(
+      getTopArticles.fulfilled,
+      (state, { payload, error }: any) => {
+        (state.articles = payload.articles),
+          (state.isLoading = false),
+          (state.errorMessage = "");
+      }
+    );
+    builder.addCase(getTopArticles.rejected, (state, { error }: any) => {
+      (state.isLoadingMore = false),
         (state.isLoading = false),
-        (state.errorMessage = "");
-    });
-    builder.addCase(getTopArticles.rejected, (state, {error}:any) => {
-      (console.log(error)),
-      (state.isLoadingMore = false), (state.errorMessage = "");
+        (state.errorMessage = error.message);
     });
     builder.addCase(getMoreTopArticles.pending, state => {
       state.isLoadingMore = true;
@@ -83,30 +89,39 @@ const articlesReducer = createSlice({
         (state.isLoadingMore = false),
         (state.errorMessage = "");
     });
-    builder.addCase(getMoreTopArticles.rejected, (state, error:any) => {
-      (state.isLoading = false), (state.errorMessage = "");
+    builder.addCase(getMoreTopArticles.rejected, (state, { error }: any) => {
+      (state.isLoading = false), (state.errorMessage = error.message);
     });
     builder.addCase(getMoreSearchedArticles.pending, state => {
       state.isLoadingMore = true;
     });
-    builder.addCase(getMoreSearchedArticles.fulfilled, (state, { payload }: any) => {
-      (state.articles = [...state.articles, ...payload.articles]),
-        (state.isLoadingMore = false),
-        (state.errorMessage = "");
-    });
-    builder.addCase(getMoreSearchedArticles.rejected, (state,error: any) => {
-      (state.isLoading = false), (state.errorMessage = "");
-    });
+    builder.addCase(
+      getMoreSearchedArticles.fulfilled,
+      (state, { payload }: any) => {
+        (state.articles = [...state.articles, ...payload.articles]),
+          (state.isLoadingMore = false),
+          (state.errorMessage = "");
+      }
+    );
+    builder.addCase(
+      getMoreSearchedArticles.rejected,
+      (state, { error }: any) => {
+        (state.isLoading = false), (state.errorMessage = error.message);
+      }
+    );
     builder.addCase(getSearchedArticles.pending, state => {
       state.isLoading = true;
     });
-    builder.addCase(getSearchedArticles.fulfilled, (state, { payload }: any) => {
-      (state.articles = payload.articles),
-        (state.isLoading = false),
-        (state.errorMessage = "");
-    });
-    builder.addCase(getSearchedArticles.rejected, (state, error: any) => {
-      (state.isLoading = false), (state.errorMessage = "");
+    builder.addCase(
+      getSearchedArticles.fulfilled,
+      (state, { payload }: any) => {
+        (state.articles = payload.articles),
+          (state.isLoading = false),
+          (state.errorMessage = "");
+      }
+    );
+    builder.addCase(getSearchedArticles.rejected, (state, { error }: any) => {
+      (state.isLoading = false), (state.errorMessage = error.message);
     });
   },
 });

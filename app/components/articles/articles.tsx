@@ -56,6 +56,7 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
   return (
     <div className="w-full  bg-background ">
       {isLoading && <Loader />}
+      {errorMessage && <div className="w-full text-center text-red-500 font-semibold text-lg">{errorMessage}</div>}
       <div className="grid justify-between gap-x-12 gap-y-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3  mx-auto mb-10">
         {!isLoading &&
           articles.length > 0 &&
