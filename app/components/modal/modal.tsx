@@ -24,14 +24,14 @@ const Modal = ({
         <Image
           onClick={handleModalStatus}
           src={images.arrow}
-          className="h-6 rotate-180 m-4 w-6"
+          className="h-6 rotate-180 m-4 w-6 hover:opacity-80 transition-opacity"
           alt={""}
         />
-        <div className="w-full flex flex-col items-center px-20 gap-8 pb-10">
+        <div className="w-full flex flex-col items-center px-4 sm:px-10 md:px-20 gap-8 pb-10">
           <Image
             unoptimized
             src={image? image : images.article}
-            className="rounded shadow-md w-full sm:w-2/3 md:w-1/2 h-64"
+            className="rounded shadow-md w-full sm:w-2/3 md:w-1/2 h-48 md:h-64"
             width={0}
             height={0}
             alt={""}

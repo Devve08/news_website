@@ -50,9 +50,9 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchTopArticles();
-  // }, []);
+  useEffect(() => {
+    fetchTopArticles();
+  }, []);
   return (
     <div className="w-full  bg-background ">
       {isLoading && <Loader />}

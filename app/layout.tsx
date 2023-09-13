@@ -1,7 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ReduxProvider } from "./redux/provider";
-
+import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <ReduxProvider>
-        <body className="bg-background">{children}</body>
+        <body className="bg-background">
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
       </ReduxProvider>
     </html>
   );

@@ -5,6 +5,6 @@ export const preparePagination = (url: string, page: number, limit: number) => {
     var limitFinal = limit ?? 1000;
     finalUrl += `&page=${pageFinal}`;
     finalUrl += `&pageSize=${limitFinal}`;
-    finalUrl += `&apiKey=7433957d2837412c99d025c16f01760c`;
+    finalUrl += `&apiKey=167f727e293d48d3ab3f62eeb0595b5a`;
     return finalUrl.replace('?&', '?');
   };

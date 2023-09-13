@@ -29,7 +29,8 @@ const ArticleCard = ({
   console.log("render card", title);
   return (
     <motion.div className="w-full h-80 rounded flex items-center justify-center cursor-pointer ">
-      <div
+      <motion.div
+      whileHover={{scale:0.95, originY: 0,  transition:{duration: 0.4}}}
         onClick={handleModalStatus}
         className="bg-white h-full rounded w-[80%] sm:w-[90%] shadow-lg"
       >
@@ -38,7 +39,7 @@ const ArticleCard = ({
             blurDataURL={images.article}
             unoptimized
             src={url ? url : images.article}
-            className="h-full w-full"
+            className="h-full w-full rounded-t"
             width={0}
             height={0}
             alt={""}
@@ -75,7 +76,7 @@ const ArticleCard = ({
             <div className="text-xs text-text_primary">{formatDate(date)}</div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <AnimatePresence>
         {modalOpen && (
           <Modal
