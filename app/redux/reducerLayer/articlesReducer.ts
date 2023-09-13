@@ -70,8 +70,8 @@ const articlesReducer = createSlice({
         (state.isLoading = false),
         (state.errorMessage = "");
     });
-    builder.addCase(getTopArticles.rejected, (state, { payload }: any) => {
-      (state.isLoadingMore = false), (state.errorMessage = payload.message);
+    builder.addCase(getTopArticles.rejected, (state, error:any) => {
+      (state.isLoadingMore = false), (state.errorMessage = error.message);
     });
     builder.addCase(getMoreTopArticles.pending, state => {
       state.isLoadingMore = true;
@@ -81,8 +81,8 @@ const articlesReducer = createSlice({
         (state.isLoadingMore = false),
         (state.errorMessage = "");
     });
-    builder.addCase(getMoreTopArticles.rejected, (state, { payload }: any) => {
-      (state.isLoading = false), (state.errorMessage = payload.message);
+    builder.addCase(getMoreTopArticles.rejected, (state, error:any) => {
+      (state.isLoading = false), (state.errorMessage = error.message);
     });
     builder.addCase(getMoreSearchedArticles.pending, state => {
       state.isLoadingMore = true;
@@ -92,8 +92,8 @@ const articlesReducer = createSlice({
         (state.isLoadingMore = false),
         (state.errorMessage = "");
     });
-    builder.addCase(getMoreSearchedArticles.rejected, (state, { payload }: any) => {
-      (state.isLoading = false), (state.errorMessage = payload.message);
+    builder.addCase(getMoreSearchedArticles.rejected, (state,error: any) => {
+      (state.isLoading = false), (state.errorMessage = error.message);
     });
     builder.addCase(getSearchedArticles.pending, state => {
       state.isLoading = true;
@@ -103,8 +103,8 @@ const articlesReducer = createSlice({
         (state.isLoading = false),
         (state.errorMessage = "");
     });
-    builder.addCase(getSearchedArticles.rejected, (state, { payload }: any) => {
-      (state.isLoading = false), (state.errorMessage = payload.message);
+    builder.addCase(getSearchedArticles.rejected, (state, error: any) => {
+      (state.isLoading = false), (state.errorMessage = error.message);
     });
   },
 });
