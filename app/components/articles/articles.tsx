@@ -50,14 +50,14 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
     }
   };
 
-  useEffect(() => {
-    fetchTopArticles();
-  }, []);
+  // useEffect(() => {
+  //   fetchTopArticles();
+  // }, []);
   return (
-    <div className="w-full  bg-background ">
+    <div className="w-full  bg-background sm:p-10 p-4 md:px-20">
       {isLoading && <Loader />}
       {errorMessage && <div className="w-full text-center text-red-500 font-semibold text-lg">{errorMessage}</div>}
-      <div className="grid justify-between gap-x-12 gap-y-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3  mx-auto mb-10">
+      <div className="grid justify-center gap-x-[30px] gap-y-6 grid-cols-no sm:grid-cols-sm md:grid-cols-md  mx-auto mb-10">
         {!isLoading &&
           articles.length > 0 &&
           articles.map((article, index) => (
@@ -76,9 +76,9 @@ const Articles = ({ query, setPage, page }: ArticlesProps) => {
         <div className="w-full flex items-center justify-center">
           <div
             onClick={fetchMoreTopArticles}
-            className="border border-text_secondary flex flex-row px-2 cursor-pointer rounded-sm py-2 justify-center items-center gap-2"
+            className="border-[2px] border-text_secondary flex flex-row  cursor-pointer  rounded-[12px] w-[181px] h-[48px] justify-center items-center gap-2"
           >
-            <div className="text-text_secondary text-sm font-medium">
+            <div className="text-text_secondary text-[16px] font-bold">
               More articles
             </div>
             <Image

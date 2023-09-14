@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns:{
+        'md': 'repeat(3, minmax(0, 360px))',
+        'sm': 'repeat(2, minmax(0, 310px))',
+        'no': 'repeat(1, minmax(0, 288px))'
+      },
       colors: {
         primary: "#0D2436",
         secondary: "#959EAD",

@@ -17,12 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReduxProvider>
-        <body className="bg-background px-4 sm:px-10 md:px-20">
+        <body className="bg-background max-w-7xl mx-auto">
           <Navbar />
           {children}
-          
+          <Footer />
         </body>
-        <Footer />
+        
       </ReduxProvider>
     </html>
   );
