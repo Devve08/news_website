@@ -24,7 +24,7 @@ const NavPhone = () => {
       animate={"animate"}
       initial={"initial"}
       exit={"exit"}
-      className='h-screen w-full bg-gray-300 fixed top-0 left-0 md:hidden z-10'
+      className='h-screen w-full bg-gray-300 fixed top-0 left-0 md:hidden z-40'
     >
       <div className='flex flex-col gap-6 h-full items-center justify-center'>
         {navElements.map((el, index) => (

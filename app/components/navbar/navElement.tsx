@@ -23,7 +23,7 @@ const NavElement = ({ title, dropdown, link }: NavElementProps) => {
       onClick={dropdown?.length > 0 ? handleDropdown : () => {}}
       className=" relative flex flex-row items-center justify-start gap-1 cursor-pointer hover:opacity-90 transition-opacity duration-300"
     >
-      <div className=" text-text_primary font-medium font-sans text-base ">
+      <div className=" text-text_primary font-[600] text-[16px]  ">
         <Link href={`${link}`}>{title}</Link>
       </div>
       {dropdown.length > 0 && (
