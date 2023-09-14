@@ -3,7 +3,7 @@ import { images } from "@/app/kits/images";
 
 import Image from "next/image";
 import React, { memo } from "react";
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 
 type HeroProps = {
   query: string;
@@ -19,20 +19,25 @@ const Hero = ({ query, handleOnChangeQuery, handleSearch }: HeroProps) => {
       transition={{ delay: 0.2, duration: 0.5, type: "spring", stiffness: 30 }}
       className="bg-background flex flex-row w-full relative m-auto  items-start overflow-hidden"
     >
-       <div className="h-screen z-10 w-56 hidden sm:flex absolute left-0"> 
-      <Image src={images.semiCircle} className="w-full h-full" height={0} width={0} alt={""} />
+      <div className="h-screen z-10 w-56 hidden sm:flex absolute left-0">
+        <Image
+          src={images.semiCircle}
+          className="w-full h-full"
+          height={0}
+          width={0}
+          alt={""}
+        />
       </div>
-     
-      <div className="w-full md:w-1/2 sm:p-10 p-5 md:px-20 md:py-16 z-20 ">
-    
-        <div className="md:w-[539px]  font-[700] md:text-[56px] text-[32px] leading-[40px] sm:text-[48px] sm:leading-[60px] md:leading-[68px] md:text-left text-center text-text_primary ">
+
+      <div className="w-full md:w-1/2 sm:p-10 p-5 md:pr-0 md:pl-20 md:py-16 z-20 ">
+        <div className="md:w-full  font-[700] md:text-[56px] text-[32px] leading-[40px] sm:text-[48px] sm:leading-[60px] md:leading-[68px] md:text-left text-center text-text_primary ">
           Manage all of your cards in one place
         </div>
-        <div className="text-text_primary sm:text-[20px] md:w-[539px]  font-[400] leading-[28px] text-[16px] sm:leading-[36px] my-4 text-center md:text-start">
+        <div className="text-text_primary sm:text-[20px] md:w-full  font-[400] leading-[28px] text-[16px] sm:leading-[36px] my-4 text-center md:text-start">
           From year to year we strive to invent the most innovative technology
           that is used by both small enterprises and space enterprises.
         </div>
-        <div className="flex flex-col sm:h-[56px] sm:w-[555px] sm:flex-row items-center sm:mx-auto md:mx-0 gap-y-4 relative">
+        <div className="flex flex-col sm:h-[56px] sm:w-full sm:flex-row items-center sm:mx-auto md:mx-0 gap-y-4 relative">
           <div className="bg-white h-[48px] sm:h-[56px] flex flex-row items-center shadow-xl w-full px-4 gap-2  rounded-[12px]">
             <Image
               src={images.search}

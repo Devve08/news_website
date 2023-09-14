@@ -21,9 +21,9 @@ const NavElement = ({ title, dropdown, link }: NavElementProps) => {
   return (
     <div
       onClick={dropdown?.length > 0 ? handleDropdown : () => {}}
-      className=" relative flex flex-row items-center justify-start gap-1 cursor-pointer hover:opacity-90 transition-opacity duration-300"
+      className=" relative flex flex-row items-center justify-start gap-1 cursor-pointer  "
     >
-      <div className=" text-text_primary font-[600] text-[16px]  ">
+      <div className=" text-text_primary hover:text-opacity-50 transition-opacity duration-300 font-[600] text-[16px]  ">
         <Link href={`${link}`}>{title}</Link>
       </div>
       {dropdown.length > 0 && (
@@ -43,13 +43,13 @@ const NavElement = ({ title, dropdown, link }: NavElementProps) => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ y: -5, opacity: 0 }}
-            transition={{}}
-            className="w-24 rounded bg-primary absolute top-[100%] flex flex-col gap-2 items-start"
+          
+            className="w-24 rounded bg-primary absolute top-[100%] flex flex-col gap-2 items-start z-50"
           >
             {dropdown.map((el, index) => (
               <div
                 key={el.id}
-                className=" text-white font-medium font-sans text-base hover:opacity-80 transition-opacity p-2 "
+                className=" text-white font-medium  hover:text-opacity-50 transition-opacity duration-300 font-sans text-base  p-2 z-50 "
               >
                 {title}
               </div>
